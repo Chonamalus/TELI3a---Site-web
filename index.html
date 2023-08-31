@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<title>Sudoku Game</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+  .sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+    border: 2px solid #333;
+  }
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  .cell:nth-child(3n), .cell:nth-child(6n) {
+    border-right: 2px solid #333;
+  }
+  .cell:nth-child(n + 19) {
+    border-top: 2px solid #333;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="sudoku-board">
+  <!-- Replace the numbers with your Sudoku puzzle -->
+  <!-- Use empty strings for blank cells -->
+  <div class="cell">5</div><div class="cell">3</div><div class="cell"> </div><div class="cell"> </div><div class="cell">7</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div>
+  <div class="cell">6</div><div class="cell"> </div><div class="cell"> </div><div class="cell">1</div><div class="cell">9</div><div class="cell">5</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div>
+  <div class="cell"> </div><div class="cell">9</div><div class="cell">8</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell">6</div><div class="cell"> </div>
+  <div class="cell">8</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell">6</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell">3</div>
+  <div class="cell">5</div><div class="cell">3</div><div class="cell"> </div><div class="cell"> </div><div class="cell">7</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div>
+  <div class="cell">6</div><div class="cell"> </div><div class="cell"> </div><div class="cell">1</div><div class="cell">9</div><div class="cell">5</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div>
+  <div class="cell"> </div><div class="cell">9</div><div class="cell">8</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell">6</div><div class="cell"> </div>
+  <div class="cell">8</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell">6</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell">3</div>
+  <div class="cell">8</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell">6</div><div class="cell"> </div><div class="cell"> </div><div class="cell"> </div><div class="cell">3</div>
+  <!-- Repeat the above pattern for the remaining cells -->
+</div>
+
+</body>
+
+</html>

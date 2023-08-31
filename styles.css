@@ -1,0 +1,49 @@
+/* Reset default margin and padding for the whole document */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Apply a default text color */
+  body {
+    color: #333;
+  }
+  
+  /* Set a white background for the whole page */
+  body {
+    background-color: #fff;
+  }
+  
+  /* Center the Sudoku board */
+  .sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 2px;
+    border: 2px solid #333;
+    width: 380px; /* Adjust this width as needed */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 40px; /* Add some space at the top */
+    padding: 20px; /* Add padding for visual spacing */
+  }
+  
+  /* Style each cell */
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+  }
+  
+  /* Add bold lines to separate groups of 3x3 cells */
+  .cell:nth-child(3n), .cell:nth-child(6n) {
+    border-right: 2px solid #333;
+  }
+  .cell:nth-child(n + 4) {
+    border-top: 2px solid #333;
+  }
+  
