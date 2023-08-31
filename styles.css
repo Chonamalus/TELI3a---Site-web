@@ -12,6 +12,11 @@ body, h1, h2, h3, p, ul, li {
   /* Set a white background for the whole page */
   body {
     background-color: #fff;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   /* Center the Sudoku board */
@@ -20,10 +25,7 @@ body, h1, h2, h3, p, ul, li {
     grid-template-columns: repeat(9, 1fr);
     gap: 2px;
     border: 2px solid #333;
-    width: 380px; /* Adjust this width as needed */
-    margin: 0 auto; /* Center horizontally */
-    margin-top: 40px; /* Add some space at the top */
-    padding: 20px; /* Add padding for visual spacing */
+    padding: 10px; /* Add padding for visual spacing */
   }
   
   /* Style each cell */
@@ -37,6 +39,12 @@ body, h1, h2, h3, p, ul, li {
     width: 40px;
     background-color: #fff;
     border: 1px solid #ccc;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+  }
+
+  /* Highlight the cell when cursor hovers over it */
+  .cell:hover {
+    background-color: #ec8080;
   }
   
   /* Add bold lines to separate groups of 3x3 cells */
