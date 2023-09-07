@@ -24,6 +24,14 @@ function generateSudokuBoard() {
       sudokuBoard.appendChild(cell);
     }
   }
+
+  sudokuBoard.addEventListener('click', (e)=>{
+    if (e.target.className === 'cell') {
+      const currentValue = e.target.textContent;
+      const newValue = (Number(currentValue) % 9) + 1;
+      e.target.textContent = newValue;
+    }
+  });
 }
 
 // Call the function to generate the Sudoku board when the page is loaded
