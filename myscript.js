@@ -21,6 +21,18 @@ function generateSudokuBoard() {
       const cell = document.createElement("div");
       cell.className = "cell";
       cell.textContent = sudokuPuzzle[row][col];
+      if (col % 3 == 2) {
+        cell.style.borderRight = "2px solid #333";
+      }
+      if (col == 0) {
+        cell.style.borderLeft = "2px solid #333";
+      }
+      if (row % 3 == 0) {
+        cell.style.borderTop = "2px solid #333";
+      }
+      if (row == 8) {
+        cell.style.borderBottom = "2px solid #333";
+      }
 
       // Add a hover effect to change cursor type for empty cells
       if (sudokuPuzzle[row][col] === "") {

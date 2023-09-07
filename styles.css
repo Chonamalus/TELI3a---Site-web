@@ -47,12 +47,12 @@ body, h1, h2, h3, p, ul, li {
   }
   
   /* Add bold lines to separate groups of 3x3 cells */
-  .cell:nth-child(3n), .cell:nth-child(6n) {
+  /* .cell:nth-child(3n), .cell:nth-child(6n) {
     border-right: 2px solid #333;
   }
-  .cell:nth-child(n) {
-    border-top: 2px solid #333;
-  }
+  .cell:nth-child(n+21) {
+    border-top: 2px solid #BBB;
+  } */
   
 #keyboard {
   position: absolute;
