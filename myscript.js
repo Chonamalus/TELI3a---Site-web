@@ -46,8 +46,7 @@ function generateSudokuBoard() {
       // Add click event to show the keyboard and pass the event object
       cell.addEventListener("click", function (event) {
         showKeyboard(row, col, event);
-      });
-        
+      });  
       }
 
       sudokuBoard.appendChild(cell);
@@ -68,7 +67,13 @@ function showKeyboard(row, col, event) {
   keyboard.style.left = cursorX + "px";
   keyboard.style.top = cursorY + "px";
 
-  // Generate the clickable keyboard buttons using a for loop
+  // Create a container for the 3x3 grid and the 'X' button
+  const gridContainer = document.createElement("div");
+  gridContainer.className = "grid-container";
+
+  // Create a 3x3 grid for the digits 1 to 9
+  const grid = document.createElement("div");
+  grid.className = "grid";
   for (let i = 1; i <= 9; i++) {
     const button = document.createElement("button");
     button.className = "keyboard-button";
@@ -76,17 +81,23 @@ function showKeyboard(row, col, event) {
     button.onclick = function () {
       inputNumber(i, row, col);
     };
-    keyboard.appendChild(button);
+    grid.appendChild(button);
   }
 
-  // Add a button for digit 0
-  const button0 = document.createElement("button");
-  button0.className = "keyboard-button";
-  button0.textContent = "0";
-  button0.onclick = function () {
-    inputNumber(0, row, col);
+  // Create the 'X' button to clear the cell
+  const buttonX = document.createElement("button");
+  buttonX.className = "keyboard-button";
+  buttonX.textContent = "X";
+  buttonX.onclick = function () {
+    inputNumber("", row, col); // Clear the cell
   };
-  keyboard.appendChild(button0);
+
+  // Add the 3x3 grid and the 'X' button to the container
+  gridContainer.appendChild(grid);
+  gridContainer.appendChild(buttonX);
+
+  // Add the container to the keyboard
+  keyboard.appendChild(gridContainer);
 
   keyboard.style.display = "block";
 }

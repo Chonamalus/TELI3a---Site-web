@@ -57,3 +57,25 @@ body, h1, h2, h3, p, ul, li {
 #keyboard {
   position: absolute;
 }
+
+/* Add this CSS for the grid container */
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Add this CSS for the 3x3 grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+/* Center the 'X' button */
+.keyboard-button.x-button {
+  align-self: center;
+}
