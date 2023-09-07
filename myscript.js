@@ -21,7 +21,14 @@ function generateSudokuBoard() {
       const cell = document.createElement("div");
       cell.className = "cell";
       cell.textContent = sudokuPuzzle[row][col];
-      sudokuBoard.appendChild(cell);
+      // Add a hover effect to change cursor type (FRONT)
+      cell.addEventListener("mouseenter", function () {
+        cell.style.cursor = "pointer";
+      });
+      cell.addEventListener("mouseleave", function () {
+        cell.style.cursor = "default";
+      });
+      sudokuBoard.appendChild(cell); // (BACK)
     }
   }
 
@@ -34,5 +41,8 @@ function generateSudokuBoard() {
   });
 }
 
-// Call the function to generate the Sudoku board when the page is loaded
+// Call the function to generate the Sudoku board when the page is loaded (BACK)
 document.addEventListener("DOMContentLoaded", generateSudokuBoard);
+// 'DOMContentLoaded' is an event in JavaScript that is fired when the HTML 
+// document has been completely loaded and parsed by the browser, and all the 
+// DOM elements are available for manipulation via JavaScript. 
