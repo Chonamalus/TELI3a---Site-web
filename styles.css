@@ -20,7 +20,46 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
+}
+
+/* All the CSS style for the logo */
+header {
+  margin-bottom: 100px;
+}
+img {
+  max-width: 100%;
+}
+
+@keyframes rotateLogo {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  5%, 95% {
+    transform: rotate(0deg);
+  }
+  10%, 90% {
+    transform: rotate(360deg);
+  }
+  15%, 85% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo_container {
+  width: 1000px;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo_ens {
+  max-width: 100%;
+  height: auto;
+  animation: rotateLogo 10s linear infinite;
+  transition: transform 1s ease;
 }
 
 .sudoku-board {
@@ -69,8 +108,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: cadetblue;
-  opacity: 0.8;
+  background-color: rgba(4, 82, 98, 0.8);
   padding: 5px;
   border-radius: 10%;
 }
