@@ -1,80 +1,80 @@
 /* Reset default margin and padding for the whole document */
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Set a white background for the whole page */
-  body {
-    color: #333;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  /* Center the Sudoku board */
-  .sudoku-board {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 2px;
-    border: 2px solid #333;
-    padding: 10px; /* Add padding for visual spacing */
-  }
-  
-  /* Style each cell */
-  .cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    height: 40px;
-    width: 40px;
-    border: 1px solid #ccc;
-    transition: background-color 0.3s; /* Add a smooth transition effect */
-  }
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
 
-  /* Highlight the cell when cursor hovers over it */
-  .cell:hover {
-    background-color: #ec8080;
-  }
+body {
+  color: #333;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
 
-  .cell.valid {
-    background-color: #ffffff;
-  }
-  
-  .cell.invalid {
-    background-color: #ff2f2f;
-  }
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2px;
+  border: 2px solid #333;
+  padding: 10px; /* Add padding for visual spacing */
+}
 
-  /* Add bold lines to separate groups of 3x3 cells */
-  /* .cell:nth-child(3n), .cell:nth-child(6n) {
-    border-right: 2px solid #333;
-  }
-  .cell:nth-child(n+21) {
-    border-top: 2px solid #BBB;
-  } */
-  
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.cell:hover {
+  background-color: #ec8080;
+}
+
+.fixed-cell {
+  background-color: #b9ddf4;
+}
+
+.cell.valid {
+  background-color: #ffffff;
+}
+
+.cell.invalid {
+  background-color: #ff2f2f;
+}
+
 #keyboard {
   position: absolute;
 }
 
-/* Add this CSS for the grid container */
 .grid-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+  background-color: cadetblue;
+  opacity: 0.8;
+  padding: 5px;
+  border-radius: 10%;
 }
 
-/* Add this CSS for the 3x3 grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -82,7 +82,6 @@ body, h1, h2, h3, p, ul, li {
   margin-bottom: 5px;
 }
 
-/* Center the 'X' button */
 .keyboard-button.x-button {
   align-self: center;
 }
