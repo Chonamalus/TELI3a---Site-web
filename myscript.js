@@ -8,7 +8,7 @@ let sudokuPuzzle = [
   [7, "", "", "", 2, "", "", "", 6],
   ["", 6, "", "", "", "", 2, 8, ""],
   ["", "", "", 4, 1, 9, "", "", 5],
-  ["", "", "", "", 8, "", "", 7, 9]
+  ["", "", "", "", 8, "", "", 7, 9],
 ];
 
 // Function to generate the Sudoku grid
@@ -43,15 +43,15 @@ function generateSudokuBoard() {
           cell.style.cursor = "default";
         });
 
-      // Add click event to show the keyboard and pass the event object
-      cell.addEventListener("click", function (event) {
-        showKeyboard(row, col, event);
-      });  
+        // Add click event to show the keyboard and pass the event object
+        cell.addEventListener("click", function (event) {
+          showKeyboard(row, col, event);
+        });
       }
 
-      // Add grey background on fixed cell
-      else {
-        cell.style.backgroundColor = "#edfcfc";
+      // Check if the cell has a fixed number and apply the fixed-cell class
+      if (sudokuPuzzle[row][col] !== "") {
+        cell.classList.add("fixed-cell");
       }
 
       sudokuBoard.appendChild(cell);
