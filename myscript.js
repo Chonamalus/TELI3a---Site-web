@@ -49,6 +49,11 @@ function generateSudokuBoard() {
       });  
       }
 
+      // Add grey background on fixed cell
+      else {
+        cell.style.backgroundColor = "#edfcfc";
+      }
+
       sudokuBoard.appendChild(cell);
     }
   }
