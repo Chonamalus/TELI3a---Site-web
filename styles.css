@@ -86,8 +86,8 @@ img {
   background-color: #ec8080;
 }
 
-.fixed-cell {
-  background-color: #b9ddf4 !important;
+#fixed-cell {
+  background-color: #b9ddf4;
 }
 
 .cell.valid {

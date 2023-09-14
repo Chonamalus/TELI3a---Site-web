@@ -52,7 +52,7 @@ function generateSudokuBoard() {
 
       // Check if the cell has a fixed number and apply the fixed-cell class
       if (sudokuPuzzle[row][col] !== "") {
-        cell.classList.add("fixed-cell");
+        cell.id = "fixed-cell";
       }
 
       sudokuBoard.appendChild(cell);
