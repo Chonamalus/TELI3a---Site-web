@@ -65,8 +65,9 @@ function showKeyboard(row, col, event) {
   keyboard.innerHTML = ""; // Clear the keyboard
 
   // Calculate the position of the cursor relative to the viewport
-  const cursorX = event.clientX;
-  const cursorY = event.clientY;
+  // Shift the position of the cursor so that it will believe that its somewhere else
+  const cursorX = event.clientX - 35;
+  const cursorY = event.clientY - 110;
 
   // Position the keyboard next to the cursor
   keyboard.style.left = cursorX + "px";
@@ -107,6 +108,11 @@ function showKeyboard(row, col, event) {
   keyboard.style.display = "block";
 }
 
+function hideKeyboard() {
+  const keyboard = document.getElementById("keyboard");
+  keyboard.style.display = "none";
+}
+
 // Function to input a number into the Sudoku grid
 function inputNumber(number, row, col) {
   sudokuPuzzle[row][col] = number;
@@ -117,6 +123,22 @@ function inputNumber(number, row, col) {
   const keyboard = document.getElementById("keyboard");
   keyboard.style.display = "none";
 }
+
+// Hide the keyboard when clicking outside
+document.addEventListener("click", function (event) {
+  const sudokuBoard = document.getElementById("sudoku-board");
+  const keyboard = document.getElementById("keyboard");
+
+  // Check if the click target is not within the sudoku board or the keyboard
+  if (
+    event.target !== sudokuBoard &&
+    event.target !== keyboard &&
+    !sudokuBoard.contains(event.target) &&
+    !keyboard.contains(event.target)
+  ) {
+    hideKeyboard(); // Hide the keyboard
+  }
+});
 
 // Call the function to generate the Sudoku board when the page is loaded
 document.addEventListener("DOMContentLoaded", generateSudokuBoard);
