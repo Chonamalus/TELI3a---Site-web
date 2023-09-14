@@ -36,7 +36,6 @@ body, h1, h2, h3, p, ul, li {
     font-weight: bold;
     height: 40px;
     width: 40px;
-    background-color: #ffffff;
     border: 1px solid #ccc;
     transition: background-color 0.3s; /* Add a smooth transition effect */
   }
@@ -45,7 +44,15 @@ body, h1, h2, h3, p, ul, li {
   .cell:hover {
     background-color: #ec8080;
   }
+
+  .cell.valid {
+    background-color: #ffffff;
+  }
   
+  .cell.invalid {
+    background-color: #ff2f2f;
+  }
+
   /* Add bold lines to separate groups of 3x3 cells */
   /* .cell:nth-child(3n), .cell:nth-child(6n) {
     border-right: 2px solid #333;
