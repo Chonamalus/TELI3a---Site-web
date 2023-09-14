@@ -20,7 +20,7 @@ function generateSudokuBoard() {
     for (let col = 0; col < 9; col++) {
       const cell = document.createElement("div");
       cell.className = "cell";
-      cell.classList.add('valid');
+      cell.classList.add("valid");
       cell.textContent = sudokuPuzzle[row][col];
       if (col % 3 == 2) {
         cell.style.borderRight = "2px solid #333";
@@ -64,57 +64,58 @@ function checkSudokuValidity() {
   //reset validity
   for (let row = 0; row < 9; row++) {
     for (let col = 0; col < 9; col++) {
-      const cell = document.querySelector(`.cell:nth-child(${row * 9 + col + 1})`);
-      cell.classList.remove('invalid');
-      cell.classList.add('valid');
+      const cell = document.querySelector(
+        `.cell:nth-child(${row * 9 + col + 1})`
+      );
+      cell.classList.remove("invalid");
+      cell.classList.add("valid");
     }
   }
   //check lines
   for (let row = 0; row < 9; row++) {
     let line = new Array(9);
     for (let col = 0; col < 9; col++) {
-      line[col] = [row,col];
+      line[col] = [row, col];
     }
-    checkLineValidity(line)
+    checkLineValidity(line);
   }
   //check col
   for (let col = 0; col < 9; col++) {
     let line = new Array(9);
     for (let row = 0; row < 9; row++) {
-      line[row] = [row,col];
+      line[row] = [row, col];
     }
-    checkLineValidity(line)
+    checkLineValidity(line);
   }
   //check col
-  let rowCenters = [1,1,1,4,4,4,7,7,7];
-  let colCenters = [1,4,7,1,4,7,1,4,7];
-  let rowOffset = [-1,-1,-1,0,0,0,1,1,1];
-  let colOffset = [-1,0,1,-1,0,1,-1,0,1];
+  let rowCenters = [1, 1, 1, 4, 4, 4, 7, 7, 7];
+  let colCenters = [1, 4, 7, 1, 4, 7, 1, 4, 7];
+  let rowOffset = [-1, -1, -1, 0, 0, 0, 1, 1, 1];
+  let colOffset = [-1, 0, 1, -1, 0, 1, -1, 0, 1];
   for (let boxIndex = 0; boxIndex < 9; boxIndex++) {
     let line = new Array(9);
     for (let index = 0; index < 9; index++) {
-      row = rowCenters[boxIndex] + rowOffset[index]
-      col = colCenters[boxIndex] + colOffset[index]
-      line[index] = [row,col];
+      row = rowCenters[boxIndex] + rowOffset[index];
+      col = colCenters[boxIndex] + colOffset[index];
+      line[index] = [row, col];
     }
-    checkLineValidity(line)
-  }  
+    checkLineValidity(line);
+  }
 }
 
 // Check the validity of a line/col/box
-function checkLineValidity(line){
-  let digits = [-1,-1,-1,-1,-1,-1,-1,-1,-1];
-  let invadility = [0,0,0,0,0,0,0,0,0];
+function checkLineValidity(line) {
+  let digits = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+  let invadility = [0, 0, 0, 0, 0, 0, 0, 0, 0];
   for (let index = 0; index < 9; index++) {
     let rowCol = line[index];
     let row = rowCol[0];
     let col = rowCol[1];
     if (sudokuPuzzle[row][col] !== "") {
-      number = sudokuPuzzle[row][col]
+      number = sudokuPuzzle[row][col];
       if (digits[number - 1] == -1) {
-        digits[number - 1] = index; 
-      }
-      else {
+        digits[number - 1] = index;
+      } else {
         invadility[index] = 1;
         invadility[digits[number - 1]] = 1;
       }
@@ -127,8 +128,8 @@ function checkLineValidity(line){
 
     let cell = document.querySelector(`.cell:nth-child(${row * 9 + col + 1})`);
     if (invadility[index] == 1) {
-      cell.classList.remove('valid');
-      cell.classList.add('invalid');
+      cell.classList.remove("valid");
+      cell.classList.add("invalid");
     }
   }
 }
