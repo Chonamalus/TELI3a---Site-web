@@ -48,7 +48,7 @@ body {
 }
 
 .fixed-cell {
-  background-color: #b9ddf4;
+  background-color: #b9ddf4 !important;
 }
 
 .cell.valid {
