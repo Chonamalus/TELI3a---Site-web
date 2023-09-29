@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include "signup.php"?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,9 +9,25 @@
   </head>
 
   <body>
+
+    <form class="sidebar" action="index.php" method='post'>
+      <p>
+        <label for="Username">Your Username </label>
+        <input type="text"  class="form-control"  name="txtRegUsername" id="txtRegUsername" placeholder="Username" value="" required>
+      </p>
+      <p>
+        <label for="Password">Your Password </label>
+        <input type="text"  class="form-control"  name="txtRegPassword" id="txtRegPassword" placeholder="Password" value="" required>
+      </p>
+      <button id="signupButton2" name="signupButton2">Sign up</button>
+    </form>
+
     <header class="logo_container">
       <img src="ens_logo.jpg" class="logo_ens" />
+      <button id="signupButton">Sign up</button>
+      <button id="LoginButton">Log in</button>
     </header>
+    
     <h1>Sudoku de la mecotronik</h1>
     <?php echo "Hello, PHP!"; ?>
     <div id="completion-message">
