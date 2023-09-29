@@ -14,9 +14,8 @@
     <h1>Sudoku de la mecotronik</h1>
     <?php echo "Hello, PHP!"; ?>
     <div id="completion-message">
-      <p>
-        Bravaaa! <br> Sudocul complet en <span id="completion-time"></span>.
-      </p>
+      Bravaaa! <br> Sudocul complet en <span id="completion-time"></span>.
+      <button id="close-button">Close</button>
     </div>
 
     <p>
