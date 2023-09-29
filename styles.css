@@ -33,13 +33,21 @@ img {
 
 @keyframes rotateLogo {
   0%,
-  100% {transform: rotate(0deg);}
+  100% {
+    transform: rotate(0deg);
+  }
   5%,
-  95% {transform: rotate(0deg);}
+  95% {
+    transform: rotate(0deg);
+  }
   10%,
-  90% {transform: rotate(360deg);}
+  90% {
+    transform: rotate(360deg);
+  }
   15%,
-  85% {transform: rotate(360deg);}
+  85% {
+    transform: rotate(360deg);
+  }
 }
 
 .logo_container {
@@ -118,4 +126,24 @@ img {
 
 .keyboard-button.x-button {
   align-self: center;
+}
+
+#completion-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blue;
+  color: black;
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 16px;
+  z-index: 9999;
+}
+
+#completion-time {
+  font-weight: bold;
 }

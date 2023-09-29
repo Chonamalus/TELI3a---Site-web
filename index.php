@@ -13,6 +13,12 @@
     </header>
     <h1>Sudoku de la mecotronik</h1>
     <?php echo "Hello, PHP!"; ?>
+    <div id="completion-message">
+      <p>
+        Bravaaa! <br> Sudocul complet en <span id="completion-time"></span>.
+      </p>
+    </div>
+
     <p>
       Timer: <span id="timer"></span> <button id="resetButton">Reset</button>
     </p>
