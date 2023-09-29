@@ -12,7 +12,7 @@
       <img src="ens_logo.jpg" class="logo_ens" />
     </header>
     <h1>Sudoku de la mecotronik</h1>
-
+    <?php echo "Hello, PHP!"; ?>
     <p>
       Timer: <span id="timer"></span> <button id="resetButton">Reset</button>
     </p>
