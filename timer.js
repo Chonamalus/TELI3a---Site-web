@@ -45,26 +45,23 @@ function checkSudokuCompletion() {
       break;
     }
   }
-}
 
-let myValComplete = true;
-// If Sudoku is completed, display the completion message
-if (myValComplete) {
-  clearInterval(timerInterval); // Stop the timer
-  const completionTime = `${seconds}.${centiseconds} seconds`;
-  const completionMessage = document.getElementById("completion-message");
-  const completionTimeElement = document.getElementById("completion-time");
-  completionTimeElement.textContent = completionTime;
-  completionMessage.style.display = "block"; // Show the completion message
+  // If Sudoku is completed, display the completion message
+  if (isCompleted) {
+    clearInterval(timerInterval); // Stop the timer
+    const completionTime = `${seconds}.${centiseconds} seconds`;
+    const completionMessage = document.getElementById("completion-message");
+    const completionTimeElement = document.getElementById("completion-time");
+    completionTimeElement.textContent = completionTime;
+    completionMessage.style.display = "block"; // Show the completion message
+  }
 }
 
 const closeButton = document.getElementById("close-button");
 closeButton.addEventListener("click", function () {
   // Hide the completion message when the close button is clicked
-  myValComplete = false;
   const completionMessage = document.getElementById("completion-message");
-  completionMessage.style.display = "none";
-  
+  completionMessage.style.display = "none"
 });
 
 
