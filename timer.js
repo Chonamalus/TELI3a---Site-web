@@ -25,7 +25,7 @@ function incrementTimer() {
 }
 
 function resetTimer() {
-  clearInterval(timerInterval); // Clear the timer interval
+  //clearInterval(timerInterval); // Clear the timer interval
   seconds = 0;
   centiseconds = 0;
   updateTimerDisplay();
@@ -67,6 +67,8 @@ closeButton.addEventListener("click", function () {
   
 });
 
+
+document.getElementById("resetButton").addEventListener("click", resetTimer);
 // Call the function to generate the timer when the page is loaded
 document.addEventListener("DOMContentLoaded", generateTimer);
 

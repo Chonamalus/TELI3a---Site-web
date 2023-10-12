@@ -1,8 +1,7 @@
 Sudoku web site
 
 TODO :
-    - Add sliding to the sidebar
-    - Add sidebar for the login
+    - Implement the login in the login sidebar
     - Add a check for the already used name
     - Add hash to the password
     - Add something to show that you are connected and what your name is

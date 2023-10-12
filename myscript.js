@@ -11,6 +11,8 @@ let sudokuPuzzle = [
   ["", "", "", "", 8, "", "", 7, 9],
 ];
 
+let currentSidebar = 0; //0 : nothing  1 : signup   2 : login
+
 // Function to generate the Sudoku grid
 function generateSudokuBoard() {
   const sudokuBoard = document.getElementById("sudoku-board");
@@ -200,6 +202,34 @@ function inputNumber(number, row, col) {
   keyboard.style.display = "none";
 }
 
+function toggleSignupSidebar() {
+  const signUpSidebar = document.getElementById("signUpSidebar")
+  const loginSidebar = document.getElementById("loginSidebar")
+  if (currentSidebar == 1) {
+    signUpSidebar.classList.add("closed")
+    currentSidebar = 0
+  }
+  else {
+    signUpSidebar.classList.remove("closed")
+    loginSidebar.classList.add("closed")
+    currentSidebar = 1
+  }
+}
+
+function toggleLoginSidebar() {
+  const signUpSidebar = document.getElementById("signUpSidebar")
+  const loginSidebar = document.getElementById("loginSidebar")
+  if (currentSidebar == 2) {
+    loginSidebar.classList.add("closed")
+    currentSidebar = 0
+  }
+  else {
+    loginSidebar.classList.remove("closed")
+    signUpSidebar.classList.add("closed")
+    currentSidebar = 2
+  }
+}
+
 // Hide the keyboard when clicking outside
 document.addEventListener("click", function (event) {
   const sudokuBoard = document.getElementById("sudoku-board");
@@ -218,3 +248,6 @@ document.addEventListener("click", function (event) {
 
 // Call the function to generate the Sudoku board when the page is loaded
 document.addEventListener("DOMContentLoaded", generateSudokuBoard);
+
+document.getElementById("signupButton").addEventListener("click", toggleSignupSidebar);
+document.getElementById("loginButton").addEventListener("click", toggleLoginSidebar);

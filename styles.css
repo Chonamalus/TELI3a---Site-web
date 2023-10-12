@@ -162,6 +162,10 @@ img {
   border-radius: 2.5%;
 }
 
+.sidebar.closed{
+  right: -350px;
+}
+
 .form-control {
   display: block;
   width: 80%;

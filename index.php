@@ -10,7 +10,7 @@
 
   <body>
 
-    <form class="sidebar" action="index.php" method='post'>
+    <form class="sidebar closed" id="signUpSidebar" action="index.php" method='post'>
       <p>
         <label for="Username">Your Username </label>
         <input type="text"  class="form-control"  name="txtRegUsername" id="txtRegUsername" placeholder="Username" value="" required>
@@ -22,10 +22,22 @@
       <button id="signupButton2" name="signupButton2">Sign up</button>
     </form>
 
+    <form class="sidebar closed" id="loginSidebar" action="index.php" method='post'>
+      <p>
+        <label for="Username">Your Username </label>
+        <input type="text"  class="form-control"  name="txtLogUsername" id="txtLogUsername" placeholder="Username" value="" required>
+      </p>
+      <p>
+        <label for="Password">Your Password </label>
+        <input type="text"  class="form-control"  name="txtLogPassword" id="txtLogPassword" placeholder="Password" value="" required>
+      </p>
+      <button id="loginButton2" name="loginButton2">Log in</button>
+    </form>
+
     <header class="logo_container">
       <img src="ens_logo.jpg" class="logo_ens" />
       <button id="signupButton">Sign up</button>
-      <button id="LoginButton">Log in</button>
+      <button id="loginButton">Log in</button>
     </header>
     
     <h1>Sudoku de la mecotronik</h1>
