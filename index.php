@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php include "signup.php"?>
+<?php include "login.php"?>
+<?php include "setup.php"?>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -41,7 +43,7 @@
     </header>
     
     <h1>Sudoku de la mecotronik</h1>
-    <?php echo "Hello, PHP!"; ?>
+    Hello, <?php echo $_SESSION['username']; ?>
     <div id="completion-message">
       Bravaaa! <br> Sudocul complet en <span id="completion-time"></span>.
       <button id="close-button">Close</button>
