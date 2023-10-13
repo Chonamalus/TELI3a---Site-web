@@ -4,7 +4,6 @@ $showError = false;
 $exists=false;
 
 //database connection
-include 'db.php';
 
 // // Check if name already taken
 // if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -52,6 +51,7 @@ include 'db.php';
 // }//end if  
 
 if(isset($_POST['txtRegUsername'])) {
+	include 'db.php';
 	echo "Button Clicked";
 
 	// get the post records
