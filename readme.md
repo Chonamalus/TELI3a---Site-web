@@ -1,6 +1,6 @@
-Sudoku web site
+# Sudoku web site
 
-TODO :
+## TODO :
     - Sign up and Login :
         - Add a check for the already used name
         - Add hash to the password
