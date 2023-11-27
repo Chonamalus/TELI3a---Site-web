@@ -3,6 +3,27 @@ let seconds = 0;
 let centiseconds = 0;
 let timerInterval; // Variable to store the timer interval
 
+function runPHPFile() {
+  // Defube the URL of your PHP file
+  const phpURL = 'your-php-file.php';
+
+  // MAke a GET request to the PHP file
+  fetch(phpURL).then(response => {
+    if (response.ok) {
+      return response.text(); // or response.json() if your PHP script outputs JSON
+    }else {
+        throw new Error('HTTP request failed');
+    }
+  })
+  .then(data => {
+    //Handle the response data from the PHP file
+    console.log(data)
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  })
+}
+
 // Function to update the timer display
 function updateTimerDisplay() {
   const timerElement = document.getElementById("timer");
