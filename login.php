@@ -3,7 +3,6 @@
 
 if(isset($_POST['txtLogUsername'])) {
     include 'db.php';
-	echo "Button Clicked";
 
 	// get the post records
 	$txtLogUsername = $_POST['txtLogUsername'];
