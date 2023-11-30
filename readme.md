@@ -1,4 +1,6 @@
 # Sudoku web site
+To launch this site you need to launch indec.php and not be on ENS Rennes Wifi for the database to work
+https://github.com/Chonamalus/TELI3a---Site-web
 
 ## TODO :
     - Sign up and Login :
